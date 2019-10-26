@@ -53,6 +53,8 @@ namespace osu.Game
     public class OsuGame : OsuGameBase, IKeyBindingHandler<GlobalAction>
     {
         public Toolbar Toolbar;
+        public AudioSource SoundNight;
+        public bool NightMod;
 
         private ChatOverlay chatOverlay;
 
@@ -401,6 +403,14 @@ namespace osu.Game
         {
             base.Dispose(isDisposing);
             RavenLogger.Dispose();
+        }
+        
+        //playing sound in nightmod
+        
+        public void NightModSound()
+        {
+        NightMod = true;
+        SoundNight = this.GetComponent<AudioSource>();
         }
 
         protected override void LoadComplete()
