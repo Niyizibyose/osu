@@ -16,6 +16,13 @@ using osu.Game.Tournament;
 namespace osu.Desktop
 {
     public static class Program
+    public AudioSource NightCoreMod;
+    
+    void Start()
+    {
+        NightCoreMod= this.GetComponent<AudioSource>();
+    }
+        
     {
         [STAThread]
         public static int Main(string[] args)
